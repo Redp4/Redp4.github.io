@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #16161A; /* Set the background color */
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    
+}
+
+.border {
+    margin-top: -0.2cm;
+    margin-bottom: 0cm;
+}
+
+.title {
+    margin-top: 2cm;
+    margin-bottom: 1cm;
+}
+.title2 {
+    margin-top: 10%;
+    margin-bottom: 1cm;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    margin-bottom: 3cm;
+}
+
+.left-panel, .right-panel {
+    flex: 1;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Make the lists flex containers */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+}
+
+li {
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    background-color: rgb(21, 33, 42); 
+    cursor: pointer;
+    display: inline-block;
+    flex-grow: 1; /* Allow items to grow and take available space */
+    position: relative; /* Positioning context for the overlay */
+    color: white;
+    border-radius: 10px;
+}
+
+.overlay {
+    position: absolute;
+    top: 100%; /* Position it below the list item */
+    left: 0;
+    background-color: white;
+    color: #333;
+    padding: 5px;
+    border-radius: 5px;
+    display: none; /* Initially hidden */
+    z-index: 1; /* Ensure it appears on top of other elements */
+}
+
+li:hover .overlay {
+    display: block; /* Show the overlay on hover */
+    z-index: 2; /* Raise the overlay above other elements when shown */
+}
+
+li:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgb(21, 33, 42);
+}
+
+.right-panel ul {
+    min-height: 200px;
+    border: 2px white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.right-panel ul li {
+    background-color: gray;
+}
+
+.counter {
+    position: absolute;
+    top: 10px; /* Adjust the top position as needed */
+    right: 10px; /* Adjust the right position as needed */
+    font-size: 20px; /* Adjust the font size as needed */
+    background-color: rgb(21, 33, 42);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}

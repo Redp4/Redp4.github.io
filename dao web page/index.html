@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposal Selector</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .title1 {
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .p1 {
+            display: flex; 
+            flex-direction: column;
+            align-items:center ;
+            justify-content: flex-start;
+            font-size: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .shadow-box {
+            padding-left: 2.5%;
+            padding-right: 2.5%;
+            background-color: #ffffffa9;
+            border: 0px;
+            border-radius: 30px;
+            box-shadow: 0 1px 20px rgb(0 0 0 / 0.11);
+        }
+
+        .shadow-box:hover {
+            transform: translate(0px, -4%);
+        }
+    </style>
+</head>
+<body>
+    <div id="counter" class="counter">Selected Proposals: 0/10</div>
+    <hr size="20" color="blue" class="border">
+    <div class="title1"><h1>DAO Proposals Selector</h1></div>
+    <div class="p1"><div class="shadow-box"><p>drag the proposals you like towards the right</p></div></div>
+    <div class="container">
+        
+        <!--<img src="logo.png" alt="logo" class="logo">-->
+        <div class="left-panel">
+            <h2 class="title">Proposals</h2>
+            <ul id="proposal-list">
+                <!-- Create 20 list elements -->
+                <li draggable="true" data-id="1">Minswap Aiken Stableswap Audit + Bug Bounty<div class="overlay">The problem to be solved is the current lack of an open-source
+                    Stableswap on Cardano and the low liquidity for stable assets (in
+                    particular stablecoins) in the DeFi ecosystem.</div></li>
+                <li draggable="true" data-id="2">Minswap Aiken V2 Audit<div class="overlay">Minswap Labs is to release an open-source Version 2 of the DEX
+                    Smart Contracts with new features and throughput improvements. To
+                    ensure the highest security, two security audits are needed.</div></li>
+                <li draggable="true" data-id="3">Proposal 3<div class="overlay">Details for Proposal 3</div></li>
+                <li draggable="true" data-id="4">Proposal 4<div class="overlay">Details for Proposal 4</div></li>
+                <li draggable="true" data-id="5">Proposal 5<div class="overlay">Details for Proposal 5</div></li>
+                <li draggable="true" data-id="6">Proposal 6<div class="overlay">Details for Proposal 6</div></li>
+                <li draggable="true" data-id="7">Proposal 7<div class="overlay">Details for Proposal 7</div></li>
+                <li draggable="true" data-id="8">Proposal 8<div class="overlay">Details for Proposal 8</div></li>
+                <li draggable="true" data-id="9">Proposal 9<div class="overlay">Details for Proposal 9</div></li>
+                <li draggable="true" data-id="10">Proposal 10<div class="overlay">Details for Proposal 10</div></li>
+                <li draggable="true" data-id="11">Proposal 11<div class="overlay">Details for Proposal 11</div></li>
+                <li draggable="true" data-id="12">Proposal 12<div class="overlay">Details for Proposal 12</div></li>
+                <!-- Add more list elements here -->
+            </ul>
+        </div>
+        <div class="right-panel">
+            <h2 class="title2">Selected Proposals</h2>
+            <ul id="selected-list" droppable="true">
+                <!-- Selected proposals will appear here -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
