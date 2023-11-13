@@ -41,6 +41,14 @@
 
 
 
+body {
+  
+  font-family: "Roboto", sans-serif;
+  transition: 0.25s;
+  background-color: #ffffff;
+  color: white;
+}
+
 .superclass {
   display: flex;
   flex-direction: row;
@@ -48,26 +56,25 @@
   align-items: center;
   overflow: hidden;
   height: 100vh;
-  font-family: "Roboto", sans-serif;
-  transition: 0.25s;
 }
-.superclass.dark {
+
+.dark-mode {
   background: #232223;
   color: white;
 }
 @media (prefers-color-scheme: dark) {
-  .superclass:not(.light) {
+  body:not(.light) {
     background: #232223;
     color: white;
   }
 }
-.superclass .credit {
+body .credit {
   position: absolute;
   bottom: 20px;
   left: 20px;
   color: inherit;
 }
-.superclass .options {
+body .options {
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -78,38 +85,38 @@
   height: 400px;
 }
 @media screen and (max-width: 718px) {
-  .superclass .options {
+  body .options {
     min-width: 520px;
   }
-  .superclass .options .option:nth-child(5) {
+  body .options .option:nth-child(5) {
     display: none;
   }
 }
 @media screen and (max-width: 638px) {
-  .superclass .options {
+  body .options {
     min-width: 440px;
   }
-  .superclass .options .option:nth-child(4) {
+  body .options .option:nth-child(4) {
     display: none;
   }
 }
 @media screen and (max-width: 558px) {
-  .superclass .options {
+  body .options {
     min-width: 360px;
   }
-  .superclass .options .option:nth-child(3) {
+  body .options .option:nth-child(3) {
     display: none;
   }
 }
 @media screen and (max-width: 478px) {
-  .superclass .options {
+  body .options {
     min-width: 280px;
   }
-  .superclass .options .option:nth-child(2) {
+  body .options .option:nth-child(2) {
     display: none;
   }
 }
-.superclass .options .option {
+body .options .option {
   position: relative;
   overflow: hidden;
   min-width: 60px;
@@ -120,25 +127,25 @@
   cursor: pointer;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
-.superclass .options .option:nth-child(1) {
+body .options .option:nth-child(1) {
   --defaultBackground:#ED5565;
 }
-.superclass .options .option:nth-child(2) {
+body .options .option:nth-child(2) {
   --defaultBackground:#FC6E51;
 }
-.superclass .options .option:nth-child(3) {
+body .options .option:nth-child(3) {
   --defaultBackground:#FFCE54;
 }
-.superclass .options .option:nth-child(4) {
+body .options .option:nth-child(4) {
   --defaultBackground:#2ECC71;
 }
-.superclass .options .option:nth-child(5) {
+body .options .option:nth-child(5) {
   --defaultBackground:#5D9CEC;
 }
-.superclass .options .option:nth-child(6) {
+body .options .option:nth-child(6) {
   --defaultBackground:#AC92EC;
 }
-.superclass .options .option.active {
+body .options .option.active {
   flex-grow: 10000;
   transform: scale(1);
   max-width: 600px;
@@ -149,34 +156,34 @@
      transform:scale(0.9);
   }*/
 }
-.superclass .options .option.active .shadow {
+body .options .option.active .shadow {
   box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
 }
-.superclass .options .option.active .label {
+body .options .option.active .label {
   bottom: 20px;
   left: 20px;
 }
-.superclass .options .option.active .label .info > div {
+body .options .option.active .label .info > div {
   left: 0px;
   opacity: 1;
 }
-.superclass .options .option:not(.active) {
+body .options .option:not(.active) {
   flex-grow: 1;
   border-radius: 30px;
 }
-.superclass .options .option:not(.active) .shadow {
+body .options .option:not(.active) .shadow {
   bottom: -40px;
   box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
 }
-.superclass .options .option:not(.active) .label {
+body .options .option:not(.active) .label {
   bottom: 10px;
   left: 10px;
 }
-.superclass .options .option:not(.active) .label .info > div {
+body .options .option:not(.active) .label .info > div {
   left: 20px;
   opacity: 0;
 }
-.superclass .options .option .shadow {
+body .options .option .shadow {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -184,14 +191,14 @@
   height: 120px;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
-.superclass .options .option .label {
+body .options .option .label {
   display: flex;
   position: absolute;
   right: 0px;
   height: 40px;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
-.superclass .options .option .label .icon {
+body .options .option .label .icon {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -203,7 +210,7 @@
   background-color: white;
   color: var(--defaultBackground);
 }
-.superclass .options .option .label .info {
+body .options .option .label .info {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -211,15 +218,15 @@
   color: white;
   white-space: pre;
 }
-.superclass .options .option .label .info > div {
+body .options .option .label .info > div {
   position: relative;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
 }
-.superclass .options .option .label .info .main {
+body .options .option .label .info .main {
   font-weight: bold;
   font-size: 1.2rem;
 }
-.superclass .options .option .label .info .sub {
+body .options .option .label .info .sub {
   transition-delay: 0.1s;
 }
 
@@ -231,6 +238,193 @@ a {
 a:hover {
     font-size: larger;
 }
+
+
+
+/* ------------------- */
+
+*{
+  --sun-mon-color: #DFDFDF;
+  --sun-color: #FFCF96;
+  --night-color: #5281CC;
+  --day-color:skyblue ;
+  transition: all .4s cubic-bezier(.7, -.57, 0.27, 1.57);
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.toggle {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  width: 100px;
+  height: 50px;
+  background-color: var(--day-color);
+  border-radius: 50px;
+}
+
+.toggle:before,
+.toggle:after{
+  position: absolute;
+  top: 15px;
+  font-size: 18px;
+}
+
+
+
+
+
+
+.sun-mon {
+  display: inline-block;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 44px;
+  height: 44px;
+  background-color: var(--sun-color);
+  border-radius: 50%;
+  box-shadow: 0 1px 5px #0000004f;
+  transform: rotate(-45deg);
+  z-index: 5;
+}
+
+.sun-mon .hole {
+  position: absolute;
+  background-color: var(--sun-mon-color);
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  border-radius: 100%;
+  width: 4px;
+  height: 4px;
+  top: 18px;
+  left: 8px;
+  box-shadow: inset 1px 0 2px rgba(51, 51, 51, 0.658);
+}
+
+.sun-mon .hole-2 {
+  top: 30px;
+  left: 20px;
+  width: 6px;
+  height: 6px;
+}
+.sun-mon .hole-3 {
+  top: 8px;
+  left: 25px;
+  width: 8px;
+  height: 8px;
+}
+
+.cloud {
+  width: 22px;
+  height: 10px;
+  border-radius: 20px;
+  position: relative;
+  background: #ffffff;
+  left: 40px;
+  top: 10px;
+  z-index: 8;
+}
+
+.cloud:before, .cloud:after{
+  content: '';
+  border-radius: 50%;
+  position: absolute;
+  background: #ffffff;
+}
+
+.cloud:before{
+  width: 8px;
+  height: 8px;
+  top: -3px;
+  left: 3px;
+}
+.cloud:after{
+  width: 10px;
+  height: 10px;
+  top: -4px;
+  left: 9px;
+}
+
+.cloud + .cloud {
+  top: 20px;
+  left: 35px;
+  z-index: 1;
+}
+
+.star{
+  height: 3px;
+  width: 3px;
+  position: absolute;
+  left: 25px;
+  top: 25px;
+  background: #fff;
+  box-shadow: 0 0 4px 0 #fff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.star:nth-child(2){
+  top: 18px;
+  left: 40px;
+  width: 1px;
+  height: 1px;
+}
+.star:nth-child(3){
+  top: 15px;
+  left: 18px;
+  width: 2px;
+  height: 2px;
+}
+
+.star:nth-child(4){
+  top: 32px;
+  left: 35px;
+  width: 2px;
+  height: 2px;
+}
+
+.star:nth-child(5){
+  top: 35px;
+  left: 20px;
+  width: 1px;
+  height: 1px;
+}
+
+
+input:checked + .toggle {
+  background-color: var(--night-color);
+}
+
+input:checked + .toggle:before {
+  color: var(--night-color);
+}
+
+input:checked + .toggle:after {
+  color: #FFF;
+}
+
+input:checked + .toggle .sun-mon {
+  background-color: var(--sun-mon-color);
+  transform: translateX(50px);
+}
+
+input:checked + .toggle .sun-mon .hole {
+  opacity: 1;
+}
+
+input:checked + .toggle .cloud{
+  transform: translateX(-25px);
+  opacity: 0;
+}
+
+input:not(:checked) + .toggle .star{
+  transform: translateX(25px);
+  opacity: 0;
+}
 </style>
 
 
@@ -239,9 +433,29 @@ a:hover {
 </head>
 
 <body translate="no">
-<div class="superclass">
+  <div class="wrapper">
+  <input onclick="myFunction()" type="checkbox" id="day-night"/>
+   <label for="day-night" class="toggle">
+      <div class="sun-mon">
+         <div class="hole hole-1"></div>
+         <div class="hole hole-2"></div>
+         <div class="hole hole-3"></div>
+      </div>
+      <div class="extra">
+         <div class="star"></div>
+         <div class="star"></div>
+         <div class="star"></div>
+         <div class="star"></div>
+         <div class="star"></div>
+         <div class="cloud"></div>
+         <div class="cloud"></div>
+      </div>
+   </label>
+  </div>
+
+<div class="superclass"> 
   <div class="options">
-   <div class="option active" style="--optionBackground:url(scirocco.png);">
+   <div class="option active" style="--optionBackground:url(https://i.postimg.cc/WzSFz6RH/Scirocco-L-View.png);">
       <div class="shadow"></div>
       <div class="label">
          <div class="icon">
@@ -253,7 +467,7 @@ a:hover {
          </div>
       </div>
    </div>
-   <div class="option" style="--optionBackground:url(barsport.jpg);">
+   <div class="option" style="--optionBackground:url(https://i.postimg.cc/Jnk5sFKd/DSCF0856.jpg);">
       <div class="shadow"></div>
       <div class="label">
          <div class="icon">
@@ -272,20 +486,20 @@ a:hover {
           <i class="fas fa-angle-double-right"></i>
        </div>
        <div class="info">
-          <div class="main"><a href="dynamic-selector/index.html">Dinamic Selector</a></div>
+          <div class="main"><a href="dynamic selector/index2.html">Dinamic Selector</a></div>
           <div class="sub"></div>
        </div>
     </div>
  </div>
 
-   <div class="option" style="--optionBackground:url(Animazione1.gif);">
+   <div class="option" style="--optionBackground:url(animazione1.gif);">
       <div class="shadow"></div>
       <div class="label">
          <div class="icon">
             <i class="fas fa-angle-double-right"></i>
          </div>
          <div class="info">
-            <div class="main"><a href="dynamic-selector-2/index.html">Dinamic Selector 2</a></div>
+            <div class="main"><a href="dynamic selector 2/index3.html">Dinamic Selector 2</a></div>
             <div class="sub"></div>
          </div>
       </div>
@@ -298,13 +512,13 @@ a:hover {
           <i class="fas fa-angle-double-right"></i>
        </div>
        <div class="info">
-          <div class="main"><a href="dao-web-page/index.html">DAO Proposals Selector</a></div>
+          <div class="main"><a href="dao web page/index.html">DAO Proposals Selector</a></div>
           <div class="sub"></div>
        </div>
     </div>
  </div>
    
-</div>
+</div> 
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 
@@ -315,6 +529,13 @@ $(".option").click(function () {
 
 });
 
+    </script>
+
+    <script>
+      function myFunction() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+      }
     </script>
 
   
